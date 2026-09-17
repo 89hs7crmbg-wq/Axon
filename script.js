@@ -54,18 +54,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-// Text reveal
-const texts = document.querySelectorAll('.block-text');
-const obs = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('visible');
-    }
-  });
-}, { threshold: 0.2 });
-
-texts.forEach(t => obs.observe(t));
-
 // To top
 const toTop = document.getElementById('to-top');
 window.addEventListener('scroll', () => {
