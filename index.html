@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AXON — Intelligence Systems</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Particles -->
+  <canvas id="particles"></canvas>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-content">
+      <img src="IMG_8988.jpg" alt="" class="preloader-img">
+      <div class="preloader-text">AXON</div>
+    </div>
+  </div>
+
+  <!-- Popup -->
+  <div id="popup" class="popup">
+    <div class="popup-card">
+      <p>Сайт — полная фантазия AIKharisov.<br>Все совпадения случайны.</p>
+      <p class="popup-q">Хотите заказать сайт?</p>
+      <a href="https://vk.ru/id_aikharisov" target="_blank" class="popup-btn">Написать в ВК</a>
+      <button id="popup-close">Закрыть</button>
+    </div>
+  </div>
+
+  <!-- Side Navigation -->
+  <nav class="side-nav">
+    <div class="nav-logo">AXON</div>
+    <div class="nav-links">
+      <a href="#hero" class="nav-item active" data-section="hero"><span>01</span> Начало</a>
+      <a href="#system" class="nav-item" data-section="system"><span>02</span> Система</a>
+      <a href="#principles" class="nav-item" data-section="principles"><span>03</span> Принципы</a>
+      <a href="#contact" class="nav-item" data-section="contact"><span>04</span> Связь</a>
+    </div>
+  </nav>
+
+  <!-- Mobile Header -->
+  <header class="mobile-header">
+    <div class="mobile-logo">AXON</div>
+    <button class="burger" id="burger">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#hero" class="mobile-link">Начало</a>
+    <a href="#system" class="mobile-link">Система</a>
+    <a href="#principles" class="mobile-link">Принципы</a>
+    <a href="#contact" class="mobile-link">Связь</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" id="hero">
+    <div class="hero-bg" style="background-image: url('IMG_8982.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">AXON</h1>
+      <p class="hero-subtitle">Интеллект. Системы. Мощь.</p>
+    </div>
+  </section>
+
+  <!-- System -->
+  <section class="section" id="system">
+    <div class="section-bg" style="background-image: url('IMG_8983.jpg')"></div>
+    <div class="section-overlay"></div>
+    <div class="section-content">
+      <span class="section-num">02</span>
+      <h2>Система</h2>
+      <p>Сложная структура, выстроенная на точности и контроле. Каждый элемент связан с другим. Здесь нет случайностей — только расчёт и сила.</p>
+    </div>
+  </section>
+
+  <!-- Principles -->
+  <section class="section" id="principles">
+    <div class="section-bg" style="background-image: url('IMG_8985.jpg')"></div>
+    <div class="section-overlay"></div>
+    <div class="section-content right">
+      <span class="section-num">03</span>
+      <h2>Принципы</h2>
+      <p>Глубина вместо шума. Точность вместо скорости. Система, которая не показывает силу — она её содержит.</p>
+    </div>
+  </section>
+
+  <!-- Network -->
+  <section class="section" id="network">
+    <div class="section-bg" style="background-image: url('IMG_8987.jpg')"></div>
+    <div class="section-overlay dark"></div>
+    <div class="section-content center">
+      <h2>Связи</h2>
+      <p>Невидимые линии, которые держат целое.</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="contact-inner">
+      <h2>AXON</h2>
+      <p class="contact-text">Вымышленный проект.<br>Создано для демонстрации.</p>
+      <a href="https://vk.ru/id_aikharisov" target="_blank" class="contact-btn">Связаться</a>
+    </div>
+  </section>
+
+  <button class="to-top" id="to-top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
