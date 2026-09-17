@@ -9,19 +9,18 @@
 </head>
 <body>
 
+  <div class="progress" id="progress"></div>
   <canvas id="particles"></canvas>
 
   <!-- Preloader -->
   <div id="preloader">
-    <div class="preloader-box">
-      <img src="IMG_8988.jpeg" alt="" class="preloader-img">
-      <div class="preloader-name">AXON</div>
-    </div>
+    <img src="IMG_8988.jpeg" alt="" class="preloader-img">
+    <div class="preloader-label">AXON</div>
   </div>
 
   <!-- Popup -->
   <div id="popup" class="popup">
-    <div class="popup-card">
+    <div class="popup-inner">
       <p>Сайт — полная фантазия AIKharisov.<br>Все совпадения случайны.</p>
       <p class="popup-q">Хотите заказать сайт?</p>
       <a href="https://vk.ru/id_aikharisov" target="_blank" class="popup-btn">Написать в ВК</a>
@@ -29,87 +28,81 @@
     </div>
   </div>
 
-  <!-- Side Nav -->
-  <nav class="side-nav">
-    <div class="nav-brand">AXON</div>
-    <div class="nav-list">
-      <a href="#hero" class="nav-link active" data-section="hero"><span>01</span>Начало</a>
-      <a href="#system" class="nav-link" data-section="system"><span>02</span>Система</a>
-      <a href="#principles" class="nav-link" data-section="principles"><span>03</span>Принципы</a>
-      <a href="#network" class="nav-link" data-section="network"><span>04</span>Связи</a>
-      <a href="#contact" class="nav-link" data-section="contact"><span>05</span>Контакт</a>
-    </div>
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-logo">AXON</div>
+    <ul class="nav-menu">
+      <li><a href="#intro" data-index="01">Начало</a></li>
+      <li><a href="#system" data-index="02">Система</a></li>
+      <li><a href="#code" data-index="03">Принципы</a></li>
+      <li><a href="#links" data-index="04">Связи</a></li>
+      <li><a href="#end" data-index="05">Контакт</a></li>
+    </ul>
   </nav>
 
-  <!-- Mobile -->
-  <header class="mobile-bar">
-    <div class="mobile-brand">AXON</div>
-    <button class="burger" id="burger"><span></span><span></span></button>
-  </header>
+  <button class="menu-btn" id="menu-btn"><span></span><span></span></button>
 
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#hero" class="mobile-link">Начало</a>
-    <a href="#system" class="mobile-link">Система</a>
-    <a href="#principles" class="mobile-link">Принципы</a>
-    <a href="#network" class="mobile-link">Связи</a>
-    <a href="#contact" class="mobile-link">Контакт</a>
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#intro">Начало</a>
+    <a href="#system">Система</a>
+    <a href="#code">Принципы</a>
+    <a href="#links">Связи</a>
+    <a href="#end">Контакт</a>
   </div>
 
-  <!-- Hero -->
-  <section class="hero" id="hero">
-    <div class="hero-bg" style="background-image: url('IMG_8982.jpeg')"></div>
-    <div class="hero-mask"></div>
-    <div class="hero-content">
+  <!-- Intro -->
+  <header class="intro" id="intro">
+    <div class="intro-bg" style="background-image:url('IMG_8982.jpeg')"></div>
+    <div class="intro-fade"></div>
+    <div class="intro-content">
       <h1>AXON</h1>
-      <p class="hero-sub">Интеллект. Системы. Мощь.</p>
+      <p>Интеллект. Системы. Мощь.</p>
     </div>
-  </section>
+  </header>
 
   <!-- System -->
-  <section class="block" id="system">
-    <div class="block-bg" style="background-image: url('IMG_8983.jpeg')"></div>
-    <div class="block-mask"></div>
-    <div class="block-text">
+  <section class="chapter" id="system">
+    <div class="chapter-visual" style="background-image:url('IMG_8983.jpeg')"></div>
+    <div class="chapter-info">
       <span>02</span>
       <h2>Система</h2>
-      <p>Сложная структура, построенная на точности и контроле. Каждый элемент связан. Здесь нет случайностей.</p>
+      <p>Сложная структура, выстроенная на точности. Каждый элемент связан. Случайностей нет.</p>
     </div>
   </section>
 
   <!-- Principles -->
-  <section class="block" id="principles">
-    <div class="block-bg" style="background-image: url('IMG_8985.jpeg')"></div>
-    <div class="block-mask right"></div>
-    <div class="block-text right">
+  <section class="chapter reverse" id="code">
+    <div class="chapter-visual" style="background-image:url('IMG_8985.jpeg')"></div>
+    <div class="chapter-info">
       <span>03</span>
       <h2>Принципы</h2>
-      <p>Глубина вместо шума. Точность вместо скорости. Сила, которую не показывают — её содержат.</p>
+      <p>Глубина вместо шума. Точность вместо скорости. Сила, которую содержат, а не показывают.</p>
     </div>
   </section>
 
-  <!-- Network -->
-  <section class="block" id="network">
-    <div class="block-bg" style="background-image: url('IMG_8987.jpeg')"></div>
-    <div class="block-mask dark"></div>
-    <div class="block-text center">
+  <!-- Links -->
+  <section class="full" id="links">
+    <div class="full-bg" style="background-image:url('IMG_8987.jpeg')"></div>
+    <div class="full-fade"></div>
+    <div class="full-text">
       <span>04</span>
       <h2>Связи</h2>
       <p>Невидимые линии, которые удерживают целое.</p>
     </div>
   </section>
 
-  <!-- Contact -->
-  <section class="contact" id="contact">
-    <div class="contact-bg" style="background-image: url('IMG_8986.jpeg')"></div>
-    <div class="contact-mask"></div>
-    <div class="contact-content">
+  <!-- End -->
+  <section class="end" id="end">
+    <div class="end-bg" style="background-image:url('IMG_8986.jpeg')"></div>
+    <div class="end-fade"></div>
+    <div class="end-content">
       <h2>AXON</h2>
       <p>Вымышленный проект.<br>Создано для демонстрации.</p>
-      <a href="https://vk.ru/id_aikharisov" target="_blank" class="btn">Связаться</a>
+      <a href="https://vk.ru/id_aikharisov" target="_blank" class="end-btn">Связаться</a>
     </div>
   </section>
 
-  <button class="to-top" id="to-top">↑</button>
+  <button class="up" id="up">↑</button>
 
   <script src="script.js"></script>
 </body>
