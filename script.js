@@ -2,24 +2,22 @@
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('preloader').classList.add('hide');
-  }, 2200);
+  }, 2300);
 });
 
 // Popup
 window.addEventListener('load', () => {
   setTimeout(() => {
     document.getElementById('popup').classList.add('show');
-  }, 4500);
+  }, 4600);
 });
 
 document.getElementById('popup-close').addEventListener('click', () => {
   document.getElementById('popup').classList.remove('show');
 });
 
-document.getElementById('popup').addEventListener('click', (e) => {
-  if (e.target.id === 'popup') {
-    document.getElementById('popup').classList.remove('show');
-  }
+document.getElementById('popup').addEventListener('click', e => {
+  if (e.target.id === 'popup') document.getElementById('popup').classList.remove('show');
 });
 
 // Mobile menu
@@ -31,29 +29,24 @@ burger.addEventListener('click', () => {
 });
 
 document.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('open');
-  });
+  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
 });
 
-// Active nav on scroll
+// Active nav
 const sections = document.querySelectorAll('section[id]');
-const navItems = document.querySelectorAll('.nav-item');
+const navLinks = document.querySelectorAll('.nav-link');
 
 window.addEventListener('scroll', () => {
   let current = '';
-  sections.forEach(section => {
-    const top = section.offsetTop;
-    if (pageYOffset >= top - 300) {
-      current = section.getAttribute('id');
+  sections.forEach(sec => {
+    if (pageYOffset >= sec.offsetTop - 280) {
+      current = sec.id;
     }
   });
 
-  navItems.forEach(item => {
-    item.classList.remove('active');
-    if (item.dataset.section === current) {
-      item.classList.add('active');
-    }
+  navLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.dataset.section === current) link.classList.add('active');
   });
 });
 
@@ -66,63 +59,60 @@ toTop.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-// ===== Particles =====
-(function() {
+// Particles
+(function () {
   const canvas = document.getElementById('particles');
   if (!canvas) return;
 
   const ctx = canvas.getContext('2d');
-  let width, height;
-  let particles = [];
+  let w, h, particles = [];
 
   function resize() {
-    width = canvas.width = window.innerWidth;
-    height = canvas.height = window.innerHeight;
+    w = canvas.width = innerWidth;
+    h = canvas.height = innerHeight;
   }
 
-  function createParticles() {
+  function create() {
     particles = [];
-    const count = Math.floor(width * height / 18000);
+    const count = Math.floor(w * h / 16000);
     for (let i = 0; i < count; i++) {
       particles.push({
-        x: Math.random() * width,
-        y: Math.random() * height,
-        radius: Math.random() * 1.4 + 0.4,
-        speedX: (Math.random() - 0.5) * 0.25,
-        speedY: (Math.random() - 0.5) * 0.25,
-        opacity: Math.random() * 0.5 + 0.15
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 1.5 + 0.4,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        o: Math.random() * 0.5 + 0.15
       });
     }
   }
 
   function draw() {
-    ctx.clearRect(0, 0, width, height);
+    ctx.clearRect(0, 0, w, h);
 
     particles.forEach(p => {
-      p.x += p.speedX;
-      p.y += p.speedY;
+      p.x += p.vx;
+      p.y += p.vy;
 
-      if (p.x < 0) p.x = width;
-      if (p.x > width) p.x = 0;
-      if (p.y < 0) p.y = height;
-      if (p.y > height) p.y = 0;
+      if (p.x < 0) p.x = w;
+      if (p.x > w) p.x = 0;
+      if (p.y < 0) p.y = h;
+      if (p.y > h) p.y = 0;
 
       ctx.beginPath();
-      ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-      ctx.fillStyle = `rgba(122, 155, 184, ${p.opacity})`;
+      ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(139, 169, 196, ${p.o})`;
       ctx.fill();
     });
 
-    // Connecting lines
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
         const dx = particles[i].x - particles[j].x;
         const dy = particles[i].y - particles[j].y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-
-        if (dist < 110) {
+        const d = Math.sqrt(dx * dx + dy * dy);
+        if (d < 120) {
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(122, 155, 184, ${0.12 * (1 - dist / 110)})`;
+          ctx.strokeStyle = `rgba(139, 169, 196, ${0.11 * (1 - d / 120)})`;
           ctx.lineWidth = 0.6;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
@@ -134,12 +124,12 @@ toTop.addEventListener('click', () => {
     requestAnimationFrame(draw);
   }
 
-  window.addEventListener('resize', () => {
+  addEventListener('resize', () => {
     resize();
-    createParticles();
+    create();
   });
 
   resize();
-  createParticles();
+  create();
   draw();
 })();
